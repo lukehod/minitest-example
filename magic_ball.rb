@@ -1,20 +1,4 @@
 # magic_ball.rb
-require 'minitest/autorun'
-
-class MagicBallTest < Minitest::Test
-  def test_ask_returns_an_answer
-    magic_ball = MagicBall.new
-    assert_includes MagicBall::ANSWERS, magic_ball.ask("Whatever")
-  end
-
-  def test_predefined_answers_is_array
-    assert_kind_of Array, MagicBall::ANSWERS
-  end
-
-  def test_predefined_answers_is_not_empty
-    refute_empty MagicBall::ANSWERS
-  end
-end
 
 class MagicBall
   ANSWERS = [
@@ -38,7 +22,7 @@ class MagicBall
     "My sources say no",
     "Outlook not so good",
     "Very doubtful"
-]
+  ]
 
   def ask question
     ANSWERS.sample
